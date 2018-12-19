@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="author" content="Natália Souza" />
+    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/rutgers.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/rladies-fonts.css" rel="stylesheet" />
+    <script src="libs/kePrint-0.0.1/kePrint.js"></script>
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, middle, inverse
+
+.center[
+## Planejamento de Experimentos
+]
+
+
+
+.left[
+
+##### Docente: Denise Viola
+##### Discente: Natália Souza Santos
+]
+---
+class: left, rigth 
+
+## INTRODUÇÃO
+
+* Planejamento de experimentos é um procedimento que permite controlar os possíveis fatores que estejam relacionados a resposta de interesse, de forma a tornar possível a identificação de alterações no desfecho, como também as razões de tais alterações.
+
+
+* Não requer amostras grandes e visa, entre outras coisas, facilitar a tomada de decisão.
+
+
+* Pode ser altamente custoso, mas, se o experimento for bem planejado, pode reduzir significativamente custos de maneira geral. 
+
+
+---
+class: left, rigth 
+
+## OBJETIVO
+
+*  Avaliar a preferência pelo sabor dos refrigerantes de limão das marcas *Goob*, *Soda* e *Sprite*, de forma a identificar se existe diferença entre a média das notas de satisfação.
+
+* Caso haja diferença, identificar quais são os tratamentos cujas médias diferem entre si.
+
+---
+class: left, rigth
+
+## METODOLOGIA
+
+* O experimento foi aplicado a uma amostra de 15(quinze) indivíduos.
+
+
+* Cada indivíduo recebeu quatro doses de refrigerante.
+
+    \-  Uma dose de *Goob*, uma de *Soda*, uma de *Sprite* e uma repetição.
+    
+
+* A dose de refrigerante a ser repetida foi escolhida aleatoriamente.
+
+
+* A ordem em que cada indivíduo tomou as doses de refrigerante também foi aleatorizada.
+
+
+---
+class: left, rigth
+
+## METODOLOGIA
+
+* Para avaliar a preferência pelo sabor dos refrigerantes, os participantes da amostra deram notas entre 0 e  10.
+
+
+* Dentre os indivíduos que participaram do experimento, permaneceram na amostra os que para a dose repetida deram nota com diferença absoluta de no máximo 1 (um) ponto.
+
+
+* Após remover os indivíduos que não foram considerados aptos para distinguir o sabor entre refrigerantes restaram 9 (nove) indivíduos na amostra.
+
+---
+class: left, rigth
+
+## METODOLOGIA
+
+* Análise de Variância - ANOVA
+
+  \- Para verificar se as médias das notas para o tratamentos são iguais com base na variabilidade entre e dentro dos grupos.
+
+* Teste Shapiro-Wilk
+
+  \-  Para verificar se os resíduos do ajuste são provenientes de uma população com distribuição normal.
+
+* Teste Bartllet  
+
+  \- Para verificar se os resíduos do ajuste são homocedasticos.
+
+
+---
+class: left, rigth
+
+## METODOLOGIA
+
+* Cada marca de refrigerante representa um tratamento, totalizando 3(três) tratamentos.
+
+
+* Delineamento de estudo adotado:
+
+  \-  Delineamento inteiramente causalizado (DIC)
+  
+  
+* Nível de significância adotado: 5 % 
+  
+  
+* Linguagem de programação R, versão 3.5.1
+
+---
+class: left, rigth 
+## VISUALIZAÇÃO DOS DADOS
+
+
+
+
+* Após remover os indivíduos não considerados aptos para distinguir o sabor entre refrigerantes.
+
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:right;"&gt; Individuo &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; goob_trat1 &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; soda_trat2 &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; sprite_trat3 &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 6 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 5.0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 8 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 8 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 9.0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 10 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 9 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 8.0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 7 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 9 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 8.0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 8 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 7 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 8.0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 6 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 8 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 7.0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 7 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 11 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 10 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 9.5 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 8 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 12 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 8 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 8.0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 6 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 13 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 7 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 8.5 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 6 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+---
+class: left, rigth 
+## ANÁLISE DESCRITIVA
+
+  **Medidas resumo:**
+
+
+&lt;table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt;   &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; mean &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; sd &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; median &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; min &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; max &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; goob_trat1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 8.00 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.22 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 8 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 6 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 10.0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; soda_trat2 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 7.89 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.29 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 8 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 9.5 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; sprite_trat3 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 7.11 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.69 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 7 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 10.0 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+
+
+* É possível perceber que as médias e medianas são bem próximas, indício que de a distribuição das notas dos tratamentos são simétricas.
+
+
+* O tratamento 3, referente ao refrigerante *Sprite*, apresenta a menor média e maior variabilidade entre as notas. 
+
+
+---
+class: left, rigth 
+## ANÁLISE DESCRITIVA
+
+.center[
+![](Experimento_files/figure-html/unnamed-chunk-4-1.png)&lt;!-- --&gt;
+]
+
+
+---
+class: left, rigth 
+## MODELO
+`$$y_{ij} = \mu + \tau_i + \varepsilon_{ij}$$`
+
+Em que:
+
+`\(y_{ij}\)` resposta do j-ésimo indivíduo associado ao i-ésimo tratamento.
+
+`\(\mu\)` média global.
+
+`\(\tau_i\)` efeito do i-ésimo tratamento.
+
+`\(\varepsilon_{ij}\)` resíduo da estimação da resposta para o j-ésimo indivíduo associado ao i-ésimo tratamento.
+
+
+---
+class: left, rigth 
+## AJUSTE
+
+**Hipóteses:**
+
+`\(H_0: \mu_1 = \mu_2 = \mu_3\)`
+
+`\(H_1: \mu_t \neq \mu_{t'}\)`  para pelo menos um t `\(\neq\)` t'; t,t'= 1,2,3
+
+
+
+
+**ANOVA**
+
+
+```
+##             Df Sum Sq Mean Sq F value Pr(&gt;F)
+## trat         2   4.22   2.111   1.049  0.366
+## Residuals   24  48.28   2.012
+```
+
+
+Ao nível de 5% de significância, não temos evidências de que as médias das notas diferem entre si.
+
+---
+class: left, rigth 
+
+## AVALIAÇÃO DAS SUPOSIÇÕES
+
+
+- Normalidade dos resíduos
+
+**Hipóteses:**
+
+`\(H_0\)`: Os dados são provenientes de uma população com distribuição normal.
+
+
+`\(H_1\)`: Os dados não são provenientes de uma população com distribuição normal. 
+
+
+
+```
+## 
+## 	Shapiro-Wilk normality test
+## 
+## data:  fit$residuals
+## W = 0.95895, p-value = 0.3497
+```
+
+
+Ao nível de 5% de significância, não temos evidências para rejeitar a hipótese de que os resíduos são provenientes de uma população com distribuição normal.
+
+---
+class: left, rigth 
+
+## AVALIAÇÃO DAS SUPOSIÇÕES
+- Homocedasticidade dos resíduos
+
+**Hipóteses:**
+
+`\(H_0\)`: Os dados são homocedasticos.
+
+
+`\(H_1\)`: Os dados não são homocedasticos. 
+
+
+
+```
+## 
+## 	Bartlett test of homogeneity of variances
+## 
+## data:  valores by trat
+## Bartlett's K-squared = 0.94808, df = 2, p-value = 0.6225
+```
+
+Ao nível de 5% de significância, não temos evidências para rejeitar a hipótese de que os resíduos são homocedasticos.
+
+---
+class: left, rigth 
+
+## CONCLUSÃO
+
+* Sendo assim, ao nível de 5% de significância, é possível concluir que não há diferença entre as médias das notas de satisfação (com relação ao sabor) para os três refrigerantes de limão, ou seja, em média não há diferença da preferência do sabor para os refrigerantes de limão das marcas *Goob*, *Soda* e *Sprite*.
+    </textarea>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function() {
+  var d = document, s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})();</script>
+
+<script>
+(function() {
+  var i, text, code, codes = document.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+})();
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
